@@ -1,0 +1,44 @@
+using System;
+
+namespace zadanie1
+{
+    internal class Program
+    {
+        
+
+
+        static void Main()
+        {
+            string input;
+            while (!string.IsNullOrEmpty(input = Console.ReadLine()))
+            {
+                string[] dane = input.Split(' ');
+                double A = double.Parse(dane[0]);
+                double B = double.Parse(dane[1]);
+                double C = double.Parse(dane[2]);
+
+                int result = CalcDelta(A, B, C);
+                Console.WriteLine(result);
+            }
+        }
+
+        static int CalcDelta(double A, double B, double C)
+        {
+            double delta = B * B - 4 * A * C;
+
+            if (delta > 0)
+            {
+                return 2;
+            }
+            else if (delta == 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+    }
+}
+
