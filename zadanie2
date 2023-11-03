@@ -1,0 +1,49 @@
+using System;
+
+namespace zadanie
+{
+    class Program
+    {
+        static void Main()
+        {
+            while (true)
+            {
+                string input = Console.ReadLine();
+                if (string.IsNullOrEmpty(input))
+                    break;
+
+                string[] elementy = input.Split(' ');
+                char dzialanie = elementy[0][0];
+                int element1 = int.Parse(elementy[1]);
+                int element2 = int.Parse(elementy[2]);
+
+                int result = 0;
+
+                switch (dzialanie)
+                {
+                    case '+':
+                        result = element1 + element2;
+                        break;
+                    case '-':
+                        result = element1 - element2;
+                        break;
+                    case '/':
+                        result = element1 / element2;
+                        break;
+                    case '*':
+                        result = element1 * element2;
+                        break;
+
+                    case '%':
+                        result = element1 % element2;
+                        break;
+                    default:
+                        Console.WriteLine("błędne działanie; " + dzialanie);
+                        break;
+                }
+
+                Console.WriteLine(result);
+            }
+        }
+    }
+}       
